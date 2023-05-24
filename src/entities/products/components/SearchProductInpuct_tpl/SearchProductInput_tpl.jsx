@@ -1,7 +1,7 @@
 import React from 'react'
 import './style/searchProductInput.css'
 
-function SearchProductInput() {
+function SearchProductInput_tpl() {
   return (
     <div className="form__search">
         <input className='form__search-input' type="text" placeholder='Поиск...'/>
@@ -14,4 +14,4 @@ function SearchProductInput() {
   )
 }
 
-export default SearchProductInput
+export default SearchProductInput_tpl

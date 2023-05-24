@@ -1,14 +1,33 @@
-import Baniere_tpl from "../../../entities/products/components/Baniere_tpl/Baniere_tpl"
-import SectionListProduct from "../../../widgets/components/SectionListProduct/SectionListProduct"
+
+import SearchProductInput_tpl from "../../../entities/products/components/SearchProductInpuct_tpl/SearchProductInput_tpl"
+import ListProduct from "../../../widgets/components/ListProduct/ListProduct"
+import Baniere from "../../../widgets/components/Baniere/Baniere"
+import './style/style.css'
+import { useSelector } from "react-redux"
 
 function Home() {
+  const listProduct = useSelector(state => state.product.listProduct)
+
   return (
     <main className='home-page'>
       <div className="home-page__container wrapper">
         <div className="home-page__content">
           {/* component Banier (publicite) */}
-              <Baniere_tpl/>
-              <SectionListProduct/>
+              <Baniere/>
+              <section className="home-main">
+                  <div className="home-main__header">
+                      <h2 className="home-main__title">Все кроссовки</h2>
+                      {/* component InputSearch */}
+                      <form className="form">
+                          <div className="form__item">
+                                  <SearchProductInput_tpl/>
+                          </div>
+                      </form>
+                  </div>
+
+                  {/* component ListProduct */}
+                  <ListProduct  products={listProduct}/>
+              </section>
          
         </div>
       </div>

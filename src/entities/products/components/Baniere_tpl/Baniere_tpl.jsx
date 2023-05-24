@@ -2,7 +2,7 @@ import React from 'react'
 import './style/baniere.css'
 
 
-function Baniere_tpl() {
+function Baniere_tpl({children}) {
   return (
     <div className="banier">
         <div className="banier__container">
@@ -17,9 +17,7 @@ function Baniere_tpl() {
                         <span>Forever!</span>
                     </div>
                     {/* component Button-simple */}
-                    <button className="button button--simple">
-                        <div className="button__text">Купить</div>
-                    </button>
+                    {children}
                 </div>
             </div>
         </div>

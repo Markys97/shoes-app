@@ -103,6 +103,11 @@
   position: absolute;
   left: 0;
   top: 9px;
+  border-radius: 8px;
+  transition: all 300ms;
+}
+.product__icon:hover {
+  box-shadow: 0 0 1px black;
 }
 .product__icon svg {
   max-width: 100%;
@@ -159,6 +164,11 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+  transition: all 300ms;
+  border-radius: 8px;
+}
+.product__add-icon:hover {
+  box-shadow: 0 0 1px black;
 }
 .product__add-icon svg {
   max-width: 100%;

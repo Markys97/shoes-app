@@ -1,0 +1,5 @@
+.list-product__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}/*# sourceMappingURL=listProduct.css.map */
