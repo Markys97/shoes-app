@@ -2,6 +2,7 @@ import React from 'react'
 import './style/sectionListProduct.css'
 import SearchProductInpuct_tpl from '../../../entities/products/components/SearchProductInpuct_tpl/SearchProductInput_tpl'
 import ItemProduct_tpl from '../../../entities/products/components/ItemProduct_tpl/ItemProduct_tpl'
+import ItemProduct from '../ItemProduct/ItemProduct'
 
 function SectionListProduct() {
   return (
@@ -20,12 +21,10 @@ function SectionListProduct() {
         <div className="list-product">
             <div className="list-product__row">
             {/* component Product */}
-                <ItemProduct_tpl isLoading={true}/>
-                <ItemProduct_tpl/>
-                <ItemProduct_tpl/>
-                <ItemProduct_tpl/>
-                <ItemProduct_tpl/>
-                <ItemProduct_tpl/>
+                <ItemProduct/>
+                <ItemProduct/>
+                <ItemProduct/>
+                <ItemProduct/>
               
             </div>
         </div>
