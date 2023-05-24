@@ -1,0 +1,56 @@
+.form__search{
+    width: 250px;
+    height: 45px;
+    position: relative;
+
+    &-input{
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding-left: 46px;
+        padding-right:20px ;
+        outline: none;
+
+        border: 1px solid #F3F3F3;
+        border-radius: 10px;
+        transition: all 300ms;
+
+        color: #c7c5c5;
+
+        &,&::placeholder{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #C4C4C4;
+        }    
+
+        &:focus{
+            border: 1px solid #c7c5c5;
+        }
+    }
+    &-icon{
+        position: absolute;
+        z-index: 1;
+        left: 8px;
+        top: 7px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        &:hover{
+            svg{
+                path{
+                    stroke: #c7c5c5;
+                }
+            }
+        }
+        svg{
+            max-width: 100%;
+            height: auto;
+            path{
+                transition: all 300ms;
+            }
+        }
+    }
+}

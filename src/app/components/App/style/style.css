@@ -1,0 +1,43 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: none;
+}
+
+body {
+  background: #E7F6FF;
+  padding: 85px 37px 85px 27px;
+}
+
+.wrapper {
+  max-width: 972px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

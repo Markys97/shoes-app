@@ -1,0 +1,65 @@
+.menu{
+    &__list{
+        display: flex;
+        align-items: center;
+        gap: 0 30px;
+    }
+    &__item{
+        &-row{
+            display: flex;
+            align-items: center;
+            gap: 0 10px;
+        }
+
+        &-icon{
+            flex-shrink: 0;
+            height: 21px;
+            width: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg{
+                max-width: 100%;
+                height: auto;
+                path{
+                    transition: all 300ms;
+                }
+            }
+        }
+
+        &-text{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6e6d6d;            
+        }
+        
+        a:hover{
+            .menu__item{
+                &-icon{
+                    svg path{
+                        fill: #6e6d6d;
+                        // stroke: red;
+                    }
+                }
+            }
+        }
+
+        &--cart{
+            a:hover{
+                .menu__item{
+                    
+                    &-icon{
+                        svg path{
+                            fill: unset;
+                            stroke: #6e6d6d;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

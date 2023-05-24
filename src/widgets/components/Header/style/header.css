@@ -1,0 +1,21 @@
+.header {
+  padding-bottom: 44px;
+  margin-bottom: 41px;
+  position: relative;
+}
+.header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #EAEAEA;
+  width: 95%;
+}
+.header__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=header.css.map */
