@@ -3,11 +3,15 @@ import ItemProduct_tpl from '../../../entities/products/components/ItemProduct_t
 import LikeProduct from '../../../features/products/LikeProduct/LikeProduct'
 import AddProductInCart from '../../../features/products/AddProductInCart/AddProductInCart'
 
-function ItemProduct() {
+function ItemProduct({productData,loading}) {
+    const id = productData?.id
+
   return (
     <ItemProduct_tpl
-        likeProduct={<LikeProduct/>}
-        addProductInCart={<AddProductInCart/>}
+        likeProduct={<LikeProduct idProduct={id}/>}
+        addProductInCart={<AddProductInCart idProduct={id}/>}
+        data={productData}
+        loading={loading}
      />
   )
 }

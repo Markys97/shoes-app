@@ -2,9 +2,13 @@ import React from 'react'
 import './style/sectionListProduct.css'
 import SearchProductInpuct_tpl from '../../../entities/products/components/SearchProductInpuct_tpl/SearchProductInput_tpl'
 import ItemProduct_tpl from '../../../entities/products/components/ItemProduct_tpl/ItemProduct_tpl'
-import ItemProduct from '../ItemProduct/ItemProduct'
+import ListProduct from '../ListProduct/ListProduct'
+import { useSelector } from 'react-redux'
+
 
 function SectionListProduct() {
+    const listProduct = useSelector(state => state.product.listProduct)
+
   return (
     <section className="home-main">
         <div className="home-main__header">
@@ -18,16 +22,7 @@ function SectionListProduct() {
         </div>
 
         {/* component ListProduct */}
-        <div className="list-product">
-            <div className="list-product__row">
-            {/* component Product */}
-                <ItemProduct/>
-                <ItemProduct/>
-                <ItemProduct/>
-                <ItemProduct/>
-              
-            </div>
-        </div>
+       <ListProduct products={undefined}/>
 
     </section>
   )
