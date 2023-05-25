@@ -1,5 +1,5 @@
 
-import SearchProductInput_tpl from "../../../entities/products/components/SearchProductInpuct_tpl/SearchProductInput_tpl"
+import SearchProductInput from "../../../features/products/SearchProductInput/SearchProductInput"
 import ListProduct from "../../../widgets/components/ListProduct/ListProduct"
 import Baniere from "../../../widgets/components/Baniere/Baniere"
 import './style/style.css'
@@ -20,13 +20,13 @@ function Home() {
                       {/* component InputSearch */}
                       <form className="form">
                           <div className="form__item">
-                                  <SearchProductInput_tpl/>
+                                  <SearchProductInput/>
                           </div>
                       </form>
                   </div>
 
                   {/* component ListProduct */}
-                  <ListProduct  products={listProduct}/>
+                  <ListProduct hasFilter={true} products={listProduct}/>
               </section>
          
         </div>
@@ -34,5 +34,5 @@ function Home() {
     </main>
   )
 }
-
+                                            
 export default Home

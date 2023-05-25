@@ -1,10 +1,16 @@
 import React from 'react'
 import './style/listProduct.css'
 import ItemProduct from '../ItemProduct/ItemProduct'
+import { useSelector } from 'react-redux';
 
 
 
-function ListProduct({products}) {
+function ListProduct({products,hasFilter}) {
+  const filterTextValue = useSelector(state => state.product.searchProductTextValue)
+  let finalListProduct =products;
+  if(hasFilter!== undefined && hasFilter===true){
+    finalListProduct = products.filter(item => item.name.toLowerCase().includes(filterTextValue.toLowerCase()))
+  }
 
     const shoeLoading = ()=>{
         let arr = []
@@ -15,13 +21,15 @@ function ListProduct({products}) {
         return arr
     }
 
+    
+
   return (
     <div className="list-product">
         <div className="list-product__row">
             {products=== undefined?(
                shoeLoading().map(item => item)
             ):(
-                products.map((product,index)=> (
+              finalListProduct.map((product,index)=> (
                     <ItemProduct key={index} productData={product}/>
                 ))
             )}

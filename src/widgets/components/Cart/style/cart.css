@@ -1,0 +1,163 @@
+.cart {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+.cart__container {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+.cart__content {
+  max-width: 385px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 32px 30px 30px;
+}
+.cart__title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.cart__list-product {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  flex-grow: 1;
+}
+.cart__body {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+.cart__full {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cart__detals {
+  margin-bottom: 24px;
+}
+.cart__detals-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 0 9px;
+}
+.cart__detals-price-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+.cart__detals-price-separator {
+  flex-grow: 1;
+  height: 1px;
+  border-bottom: 1px dashed #DFDFDF;
+}
+.cart__detals-price-number {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.itemCartProduct {
+  background: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+  transition: all 300ms;
+}
+.itemCartProduct:hover {
+  border: 1px solid #a3a2a2;
+}
+.itemCartProduct__content {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 29px;
+}
+.itemCartProduct__img {
+  width: 70px;
+  height: 70px;
+  margin-right: 21px;
+  flex-shrink: 0;
+}
+.itemCartProduct__img img {
+  max-width: 100%;
+  height: auto;
+}
+.itemCartProduct__body {
+  margin-right: 11px;
+}
+.itemCartProduct__name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.itemCartProduct__price {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.itemCartProduct__icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.itemCartProduct__icon:hover svg rect {
+  stroke: #a3a2a2;
+}
+.itemCartProduct__icon:hover svg path {
+  fill: #a3a2a2;
+}
+.itemCartProduct__icon svg {
+  max-width: 100%;
+  height: auto;
+}
+.itemCartProduct__icon svg * {
+  transition: all 300ms;
+}
+
+.button--main {
+  background: #9DD558;
+  border-radius: 18px;
+  padding: 18px;
+  min-width: 325px;
+}
+.button--main__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 50px;
+}
+.button--main__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.button--main__icon {
+  display: flex;
+}/*# sourceMappingURL=cart.css.map */

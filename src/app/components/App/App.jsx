@@ -10,13 +10,28 @@ import {
   import './style/style.css'
   import LayoutPage from "../../../pages/components/LayoutPage/LayoutPage"
   import Home from "../../../pages/components/Home/Home"
+  import Cart from "../../../widgets/components/Cart/Cart"
 
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/"  element={ <LayoutPage/>}>
-      <Route path="home"  element={<Home/>}/>
+      <Route index element={<Home/>}/>
+      
     </Route>
 ))
+
+// const router = createBrowserRouter([
+//   {
+//     path:'/',
+//     element:<LayoutPage/>,
+//     children:[
+//       {
+//         index:true,
+//         element:<Home/>
+//       }
+//     ]
+//   }
+// ])
 
 function App() {
   return (
