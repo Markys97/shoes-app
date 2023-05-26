@@ -1,0 +1,72 @@
+.itemCartProduct{
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    transition: all 300ms;
+    &:hover{
+        border: 1px solid  #a3a2a2;;
+    }
+    &__content{
+        display: flex;
+        align-items: center;
+        padding: 20px 20px 29px;
+        
+    }
+
+    &__img{
+        width: 70px;
+        height: 70px;
+        margin-right: 21px;
+        // border: 1px solid;
+        flex-shrink: 0;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body{
+        margin-right: 11px;
+    }
+
+    &__name{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        margin-bottom: 8px;        
+    }
+
+    &__price{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;        
+    }
+    &__icon{
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        cursor: pointer;
+        &:hover{
+            svg rect{
+                stroke: #a3a2a2;
+            }
+            svg path{
+                fill:  #a3a2a2;
+            }
+        }
+        svg{
+            max-width: 100%;
+            height: auto;
+            *{
+                transition: all 300ms;
+            }
+            
+        }
+    }
+}

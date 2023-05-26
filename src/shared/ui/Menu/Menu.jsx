@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './style/menu.css'
-import { useSelector } from 'react-redux'
-import { getProductsInCart,getTotalPriceCart } from '../../../entities/cart/functions'
+import { useSelector,useDispatch } from 'react-redux'
+import { getProductsInCart,getTotalPriceCart,  } from '../../../entities/cart/functions'
+import { setIsOpenCart } from '../../models/slices/productSlice'
 
 function Menu() {
-    const cart = useSelector(state => state.product.cart)
+    const dispatch = useDispatch()
     const listProductLiked = useSelector(state => state.product.listProductLiked)
+    const cart = useSelector(state => state.product.cart)
     const listProduct = useSelector(state => state.product.listProduct)
 
     const productsInCart = getProductsInCart(cart,listProduct)
@@ -17,8 +19,7 @@ function Menu() {
   return (
     <nav className="menu">
         <ul className="menu__list">
-            <li className="menu__item menu__item--cart">
-                <Link to="/cart">
+            <li onClick={()=> dispatch(setIsOpenCart())} className="menu__item menu__item--cart">
                 <div className="menu__item-row">
                     <div className="menu__item-icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +32,6 @@ function Menu() {
                         {totalPriceCart} руб.
                     </div>
                 </div>
-                </Link>
             </li>
             <li className="menu__item">
                 <Link to="/favorite">

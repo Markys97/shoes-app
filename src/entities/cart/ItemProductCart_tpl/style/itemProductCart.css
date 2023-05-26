@@ -1,0 +1,63 @@
+.itemCartProduct {
+  background: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+  transition: all 300ms;
+}
+.itemCartProduct:hover {
+  border: 1px solid #a3a2a2;
+}
+.itemCartProduct__content {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 29px;
+}
+.itemCartProduct__img {
+  width: 70px;
+  height: 70px;
+  margin-right: 21px;
+  flex-shrink: 0;
+}
+.itemCartProduct__img img {
+  max-width: 100%;
+  height: auto;
+}
+.itemCartProduct__body {
+  margin-right: 11px;
+}
+.itemCartProduct__name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.itemCartProduct__price {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.itemCartProduct__icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.itemCartProduct__icon:hover svg rect {
+  stroke: #a3a2a2;
+}
+.itemCartProduct__icon:hover svg path {
+  fill: #a3a2a2;
+}
+.itemCartProduct__icon svg {
+  max-width: 100%;
+  height: auto;
+}
+.itemCartProduct__icon svg * {
+  transition: all 300ms;
+}/*# sourceMappingURL=itemProductCart.css.map */

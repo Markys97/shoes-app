@@ -3,6 +3,9 @@
   align-items: center;
   gap: 0 30px;
 }
+.menu__item {
+  cursor: pointer;
+}
 .menu__item-row {
   display: flex;
   align-items: center;

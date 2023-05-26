@@ -78,7 +78,8 @@ const initialState = {
     ],
     cart:[],
     listProductLiked:[],
-    searchProductTextValue:''
+    searchProductTextValue:'',
+    isCartOpen:false
 }
 
 export const productSlice = createSlice({
@@ -123,7 +124,8 @@ export const productSlice = createSlice({
             state.listProductLiked = state.listProductLiked.filter(item => item !== id)
             return state
         },
-        setSearchProductTextValue:(state,action)=> state= {...state,searchProductTextValue:action.payload}
+        setSearchProductTextValue:(state,action)=> state= {...state,searchProductTextValue:action.payload},
+        setIsOpenCart: (state,action)=> state={...state,isCartOpen:!state.isCartOpen}
         
     }
 })
@@ -133,5 +135,6 @@ export const {
     removeProductInCart,
     likeProduct,
     removeLikeProduct,
-    setSearchProductTextValue
+    setSearchProductTextValue,
+    setIsOpenCart,
 } = productSlice.actions
