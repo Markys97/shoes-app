@@ -9,6 +9,8 @@
         display: flex;
         justify-content: flex-end;
         height: 100%;
+        overflow: hidden;
+        cursor: pointer;
 
     }
 
@@ -18,6 +20,12 @@
         background: #FFFFFF;
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
         padding: 32px 30px 30px;
+        // transform: translateX(390px);
+        transition: all 300ms ;
+        cursor: auto;
+        &.open{
+            transform: translateX(0);
+        }
     }
     &__title{
         font-family: 'Inter';
@@ -40,7 +48,9 @@
         flex-direction: column;
         height: 90%;
         // border: 1px solid red;
-        position: relative;       
+        position: relative;
+        align-items: center;
+        justify-content: center;     
     }
     &__full{
         flex-grow: 1;

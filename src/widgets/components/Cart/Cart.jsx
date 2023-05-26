@@ -1,36 +1,63 @@
-import React from 'react'
+import React, { useEffect ,useRef, useState} from 'react'
 import './style/cart.css'
 import ButtonMain from '../../../shared/ui/ButtonMain/ButtonMain'
-import ItemProductCart_tpl from '../../../entities/cart/ItemProductCart_tpl/ItemProductCart_tpl'
 import {useSelector,useDispatch} from 'react-redux'
 import { setIsOpenCart } from '../../../shared/models/slices/productSlice'
 import ItemProductCart from '../ItemProductCart/ItemProductCart'
 import InfoBlock from '../../../shared/ui/InfoBlock/InfoBlock'
+import { getFinalTotalPriceCart,getTotalPriceCart,getProductsInCart } from '../../../entities/cart/functions'
+import { cleanCart } from '../../../shared/models/slices/productSlice'
+
+
 
 
 
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.product.cart);
+  const listProduct = useSelector(state => state.product.listProduct);
   const isCartOpen =  useSelector(state => state.product.isCartOpen);
   const isEmptyCart = cart.length===0?true:false;
+  const totalPriceWithTaxe = getFinalTotalPriceCart(cart,listProduct,5)
+  const totalPrice = getTotalPriceCart(getProductsInCart(cart,listProduct))
 
-  const closeCart = e => {
+  const [isOrderSuccess, setIsOrderSuccess] = useState(false)
+
+  const saveOrder = () =>{
+    setIsOrderSuccess(true)
+  }
+  
+ 
+
+  const closeCartOnWindow = e => {
     if(! e.target.closest('.cart__content')){
       dispatch(setIsOpenCart())
     }
    
   }
 
+  const closeCart = ()=> dispatch(setIsOpenCart())
+
+  const closeCartOnSuccessOrder = ()=>{
+    dispatch(cleanCart())
+    dispatch(setIsOpenCart())
+    setIsOrderSuccess(false)
+  }
+  
+
+
+
+
+
   return (isCartOpen===true) && (
     <div className='cart'>
-      <div onClick={(e)=> closeCart(e)} className="cart__container">
-        <div className="cart__content">
+      <div onClick={(e)=> closeCartOnWindow(e)} className="cart__container">
+        <div className={`cart__content`}>
           <h2 className="cart__title">Корзина</h2>
           <div className="cart__body">
               
               {
-                isEmptyCart===false?(
+                  isOrderSuccess===false?(isEmptyCart===false?(
                     <div className="cart__full">
                         <div className="cart__list-product">
                             {
@@ -43,25 +70,42 @@ function Cart() {
                           <div className="cart__detals-price">
                             <div className="cart__detals-price-title">Итого:</div>
                             <div className="cart__detals-price-separator"></div>
-                            <div className="cart__detals-price-number">21498 руб. </div>
+                            <div className="cart__detals-price-number">{totalPrice} руб. </div>
                           </div>
 
                           <div className="cart__detals-price">
                             <div className="cart__detals-price-title">Налог 5%:</div>
                             <div className="cart__detals-price-separator"></div>
-                            <div className="cart__detals-price-number">1074 руб. </div>
+                            <div className="cart__detals-price-number">{totalPriceWithTaxe} руб. </div>
                           </div>
                         </div>
 
                         <div className="cart__order-button">
-                            <ButtonMain>Оформить заказ</ButtonMain>
+                            <ButtonMain handlerClick={saveOrder}>Оформить заказ</ButtonMain>
                         </div>
                     </div>
                 ):(
-                  <InfoBlock/>
+                 <InfoBlock
+                  img="box.png"
+                  text="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
+                  title="Корзина пустая"
+                 >
+                    <ButtonMain handlerClick={closeCart} type="small" position={'left'}>Вернуться назад</ButtonMain>
+                 </InfoBlock>
+                )):(
+                  <div className="cart__success">
+                    <InfoBlock
+                      img="valide.png"
+                      text="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
+                      title="Корзина пустая"
+                    >
+                      <ButtonMain handlerClick={closeCartOnSuccessOrder} type="small" position={'left'}>Вернуться назад</ButtonMain>
+                  </InfoBlock>
+                  </div>
                 )
               }
           </div>
+         
         </div>
       </div>
     </div>

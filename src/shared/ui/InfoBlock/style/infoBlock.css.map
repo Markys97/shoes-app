@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"infoBlock.css"}
+{"version":3,"sources":["infoBlock.scss","infoBlock.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;ACCJ;ADCI;EACI,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;ACCR;ADCQ;EACI,eAAA;EACA,YAAA;ACCZ;ADGI;EACI,oBAAA;EACA,kBAAA;EACA,gBAAA;EACA,eAAA;EACA,iBAAA;EACA,cAAA;EACA,kBAAA;EACA,kBAAA;ACDR;ADII;EACI,oBAAA;EACA,kBAAA;EACA,gBAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;EACA,yBAAA;EACA,mBAAA;ACFR;ADKI;EACI,aAAA;EACA,uBAAA;ACHR","file":"infoBlock.css"}

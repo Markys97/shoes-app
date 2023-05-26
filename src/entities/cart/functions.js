@@ -4,4 +4,12 @@ export const getTotalPriceCart = (productsInCart)=> productsInCart.reduce((acc,c
     return acc += current.price
 },0)
 
-export const getProductById = (id,listProduct)=> listProduct.find(product => product.id === id)
+
+
+export const getProductById = (id,listProduct)=> listProduct.find(product => product.id === id);
+
+export const getFinalTotalPriceCart = (cart ,listProduct,taux) =>{
+    const totalPrice =getTotalPriceCart(getProductsInCart(cart,listProduct))
+
+    return totalPrice- ((totalPrice *taux )/100)
+}

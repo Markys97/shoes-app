@@ -125,7 +125,8 @@ export const productSlice = createSlice({
             return state
         },
         setSearchProductTextValue:(state,action)=> state= {...state,searchProductTextValue:action.payload},
-        setIsOpenCart: (state,action)=> state={...state,isCartOpen:!state.isCartOpen}
+        setIsOpenCart: (state,action)=> state={...state,isCartOpen:!state.isCartOpen},
+        cleanCart : (state) => state={...state,cart:[]}
         
     }
 })
@@ -137,4 +138,5 @@ export const {
     removeLikeProduct,
     setSearchProductTextValue,
     setIsOpenCart,
+    cleanCart,
 } = productSlice.actions

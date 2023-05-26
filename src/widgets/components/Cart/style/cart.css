@@ -10,6 +10,8 @@
   display: flex;
   justify-content: flex-end;
   height: 100%;
+  overflow: hidden;
+  cursor: pointer;
 }
 .cart__content {
   max-width: 385px;
@@ -17,6 +19,11 @@
   background: #FFFFFF;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 32px 30px 30px;
+  transition: all 300ms;
+  cursor: auto;
+}
+.cart__content.open {
+  transform: translateX(0);
 }
 .cart__title {
   font-family: "Inter";
@@ -38,6 +45,8 @@
   flex-direction: column;
   height: 90%;
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 .cart__full {
   flex-grow: 1;

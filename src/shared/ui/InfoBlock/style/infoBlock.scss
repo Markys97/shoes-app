@@ -1,3 +1,45 @@
 .infoBlock{
-    
+    max-width: 290px;
+
+    &__icon{
+        max-width: 120px;
+        margin:0 auto 30px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__title{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        color: #000000;
+        margin-bottom: 9px;
+        text-align: center;
+    }
+
+    &__text{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: rgba(#000000, .4);
+        margin-bottom: 40px;
+    }
+
+    &__button-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
 }

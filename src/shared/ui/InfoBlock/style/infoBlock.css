@@ -1,1 +1,39 @@
-/*# sourceMappingURL=infoBlock.css.map */
+.infoBlock {
+  max-width: 290px;
+}
+.infoBlock__icon {
+  max-width: 120px;
+  margin: 0 auto 30px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoBlock__icon img {
+  max-width: 100%;
+  height: auto;
+}
+.infoBlock__title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 9px;
+  text-align: center;
+}
+.infoBlock__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+}
+.infoBlock__button-wrapper {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=infoBlock.css.map */
