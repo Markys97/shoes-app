@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './style/menu.css'
 import { useSelector,useDispatch } from 'react-redux'
-import { getProductsInCart,getTotalPriceCart,  } from '../../../entities/cart/functions'
+import { getProducts,getTotalPriceCart,  } from '../../../entities/cart/functions'
 import { setIsOpenCart } from '../../models/slices/productSlice'
 
 function Menu() {
@@ -11,7 +11,7 @@ function Menu() {
     const cart = useSelector(state => state.product.cart)
     const listProduct = useSelector(state => state.product.listProduct)
 
-    const productsInCart = getProductsInCart(cart,listProduct)
+    const productsInCart = getProducts(cart,listProduct)
     const totalPriceCart= getTotalPriceCart(productsInCart)
     const totalProductLiked = listProductLiked.length
 
@@ -48,7 +48,7 @@ function Menu() {
                 </Link>
             </li>
             <li className="menu__item">
-                <Link to="/profil">
+                <Link to="/user-profil">
                 <div className="menu__item-row">
                     <div className="menu__item-icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

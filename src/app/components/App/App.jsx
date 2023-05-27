@@ -11,12 +11,15 @@ import {
   import LayoutPage from "../../../pages/components/LayoutPage/LayoutPage"
   import Home from "../../../pages/components/Home/Home"
   import Cart from "../../../widgets/components/Cart/Cart"
+  import UserProfil from "../../../pages/components/UserProfil/UserProfil"
+  import Favorite from "../../../pages/components/Favorite/Favorite"
 
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/"  element={ <LayoutPage/>}>
       <Route index element={<Home/>}/>
-      
+      <Route path="user-profil" element={<UserProfil/>} />
+      <Route path="favorite" element={<Favorite/>} />
     </Route>
 ))
 

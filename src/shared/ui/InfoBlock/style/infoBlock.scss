@@ -24,6 +24,9 @@
         color: #000000;
         margin-bottom: 9px;
         text-align: center;
+        &.green{
+            color:#87C20A ;
+        }
     }
 
     &__text{
@@ -35,6 +38,9 @@
         text-align: center;
         color: rgba(#000000, .4);
         margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 5;
     }
 
     &__button-wrapper{

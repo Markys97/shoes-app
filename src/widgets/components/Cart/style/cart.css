@@ -38,6 +38,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px 0;
+  height: 600px;
+  overflow: auto;
+}
+.cart__list-product-wrapper {
   flex-grow: 1;
 }
 .cart__body {
@@ -81,4 +85,10 @@
   font-size: 16px;
   line-height: 19px;
   color: #000000;
+}
+
+@media screen and (max-width: 1300px) {
+  .cart__list-product {
+    height: 280px;
+  }
 }/*# sourceMappingURL=cart.css.map */

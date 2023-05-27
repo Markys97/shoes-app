@@ -36,12 +36,19 @@
         color: #000000;
         margin-bottom: 30px;
     }
+
     
     &__list-product{
         display: flex;
         flex-direction: column;
         gap: 20px 0;
-        flex-grow: 1;
+        height: 600px;
+        overflow: auto;
+        &-wrapper{
+            flex-grow: 1;
+            // border: 1px solid red;
+        }
+
     }
     &__body{
         display: flex;
@@ -90,5 +97,14 @@
    
 }
 
+
+@media screen and (max-width:1300px) {
+    .cart{
+        &__list-product{
+            height: 280px;
+            
+        }
+    }
+}
 
 

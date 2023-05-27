@@ -23,6 +23,9 @@
   margin-bottom: 9px;
   text-align: center;
 }
+.infoBlock__title.green {
+  color: #87C20A;
+}
 .infoBlock__text {
   font-family: "Inter";
   font-style: normal;
@@ -32,6 +35,9 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 5;
 }
 .infoBlock__button-wrapper {
   display: flex;

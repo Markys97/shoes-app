@@ -1,0 +1,42 @@
+.product-section{
+    &__title{
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        gap: 0 21px;
+        &-icon{
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            &:hover{
+                svg{
+                    rect{
+                        stroke: #9e9e9e;
+                    }
+                }
+            }
+            svg{
+                max-width: 100%;
+                height: auto;
+                *{
+                    transition: all 300ms;
+                }
+            }
+        }
+        &-text{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+            color: #000000;
+        }
+
+    }
+    &__empty{
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

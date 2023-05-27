@@ -14,7 +14,9 @@ function Header() {
                 <div className="header__row">
                     <div className="header__item">
                     {/* component SiteLogo */}
-                        <LogoSite/>
+                       <Link to="/">
+                            <LogoSite/>
+                       </Link>
                     
                     </div>
                     <div className="header__item">

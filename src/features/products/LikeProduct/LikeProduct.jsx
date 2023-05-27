@@ -5,7 +5,6 @@ function LikeProduct({idProduct}) {
     const dispatch = useDispatch()
     const listLikedProduct = useSelector( state => state.product.listProductLiked)
 
-
     const setLikeProduct = id => {
       dispatch(likeProduct(id))
     }

@@ -5,26 +5,32 @@ import {useSelector,useDispatch} from 'react-redux'
 import { setIsOpenCart } from '../../../shared/models/slices/productSlice'
 import ItemProductCart from '../ItemProductCart/ItemProductCart'
 import InfoBlock from '../../../shared/ui/InfoBlock/InfoBlock'
-import { getFinalTotalPriceCart,getTotalPriceCart,getProductsInCart } from '../../../entities/cart/functions'
-import { cleanCart } from '../../../shared/models/slices/productSlice'
+import { getFinalTotalPriceCart,getTotalPriceCart,getProducts } from '../../../entities/cart/functions'
+import { cleanCart,setOrder } from '../../../shared/models/slices/productSlice'
+
 
 
 
 
 
 function Cart() {
+
   const dispatch = useDispatch();
   const cart = useSelector(state => state.product.cart);
   const listProduct = useSelector(state => state.product.listProduct);
   const isCartOpen =  useSelector(state => state.product.isCartOpen);
+
   const isEmptyCart = cart.length===0?true:false;
   const totalPriceWithTaxe = getFinalTotalPriceCart(cart,listProduct,5)
-  const totalPrice = getTotalPriceCart(getProductsInCart(cart,listProduct))
-
+  const totalPrice = getTotalPriceCart(getProducts(cart,listProduct))
   const [isOrderSuccess, setIsOrderSuccess] = useState(false)
 
   const saveOrder = () =>{
+    dispatch(setOrder(cart))
+   
+    dispatch(cleanCart())
     setIsOrderSuccess(true)
+
   }
   
  
@@ -39,10 +45,18 @@ function Cart() {
   const closeCart = ()=> dispatch(setIsOpenCart())
 
   const closeCartOnSuccessOrder = ()=>{
-    dispatch(cleanCart())
+  
     dispatch(setIsOpenCart())
     setIsOrderSuccess(false)
   }
+
+  useEffect(()=>{
+
+    if(isOrderSuccess&&isEmptyCart ){
+      setIsOrderSuccess(false)
+    }
+
+  },[isCartOpen])
   
 
 
@@ -55,15 +69,18 @@ function Cart() {
         <div className={`cart__content`}>
           <h2 className="cart__title">Корзина</h2>
           <div className="cart__body">
-              
               {
                   isOrderSuccess===false?(isEmptyCart===false?(
                     <div className="cart__full">
-                        <div className="cart__list-product">
-                            {
-                              cart.map((item,index) =>  <ItemProductCart key={index} idItem={item} /> )
-                            }
+
+                        <div className="cart__list-product-wrapper">
+                            <div className="cart__list-product">
+                                {
+                                  cart.map((item,index) =>  <ItemProductCart key={index} idItem={item} /> )
+                                }
+                            </div>
                         </div>
+                       
 
                         <div className="cart__detals">
 
@@ -96,8 +113,9 @@ function Cart() {
                   <div className="cart__success">
                     <InfoBlock
                       img="valide.png"
-                      text="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
-                      title="Корзина пустая"
+                      text="Ваш заказ #18 скоро будет передан курьерской доставке"
+                      title="Заказ оформлен!"
+                      type="green"
                     >
                       <ButtonMain handlerClick={closeCartOnSuccessOrder} type="small" position={'left'}>Вернуться назад</ButtonMain>
                   </InfoBlock>
@@ -105,7 +123,6 @@ function Cart() {
                 )
               }
           </div>
-         
         </div>
       </div>
     </div>
